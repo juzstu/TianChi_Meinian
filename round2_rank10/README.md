@@ -40,6 +40,7 @@
 
 ####  submit_result
 提交最终结果，最终结果是sys，dia，hdl，ldl为gbdt单模型，tl为gbdt和xgb的加权融合，比例为0.7和0.35。
+
 A榜单模型GBDT最优得分为0.0318，B榜单模型GBDT最优0.0321，tl加权融合后最优成绩0.0319。
 
 ### 队友Github
