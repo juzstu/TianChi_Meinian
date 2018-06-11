@@ -8,7 +8,7 @@
 ### 代码说明
 
 
-#### data_pre_process：
+#### data_pre_process
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1.origin_part1_part2_row2col：进行原始数据转换，包括行转列，去重等；
 
@@ -19,17 +19,17 @@
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4. data_merge_split，合并数值、文字以及snp数据。
 
 
-#### feature_selection：
+#### feature_selection
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1. 分别针对sys, dia, tl, hdl, ldl 运行snp_drop_one_hot, 得出五个对应特征的数据集，这一步骤主要是删去gbdt预训练中不重要的snp特征，然后进行one_hot编码；
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2. 分别针对sys, dia, tl, hdl, ldl 运行get_best_rounds, 得出a步骤五个数据对应的五折最优迭代次数。
 
-#### every_prediction_model:
+#### every_prediction_model
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;运行所有文件，得出sys，dia，tl，hdl，ldl在测试集上的预测结果。
 
-#### xgb_model：
+#### xgb_model
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1. add_prefix_for_xgb_model，得出带有前缀的特征数据集；
 
