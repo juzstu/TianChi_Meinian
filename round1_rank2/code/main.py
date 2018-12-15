@@ -575,9 +575,9 @@ class LGBRegression(object):
                             lgb_train,
                             num_boost_round=num_round,
                             valid_sets=lgb_test,
-                            verbose_eval=1000,
+                            verbose_eval=100,
                             feval=self.eval_error,
-                            early_stopping_rounds=3000)
+                            early_stopping_rounds=100)
             scores[test_index] = gbm.predict(x_test)
             submission_scores[:, t - 1] = gbm.predict(true_test)
         submission_data[label] = np.mean(submission_scores, axis=1).round(3)
@@ -627,7 +627,7 @@ class LGBClassification(object):
                             num_boost_round=8000,
                             valid_sets=lgb_test,
                             verbose_eval=100,
-                            early_stopping_rounds=3000)
+                            early_stopping_rounds=100)
             pred_labels[X_test.index] = np.where(gbm.predict(X_test) > 0.5, 1, 0)
             self.params.pop('scale_pos_weight')
             submission_label[:, t - 1] = np.where(gbm.predict(test4lgb) > 0.5, 1, 0)
